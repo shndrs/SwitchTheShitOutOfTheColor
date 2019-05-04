@@ -37,9 +37,7 @@ enum ZPositions {
 public struct UserDefaultsManager {
     
     public static let shared = UserDefaultsManager()
-    
     public let value = UserDefaults.standard
-    
     private init() {}
 }
 

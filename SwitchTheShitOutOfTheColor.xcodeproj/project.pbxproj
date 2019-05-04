@@ -19,6 +19,7 @@
 		F43E504E227D9F07009B8E31 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = F43E504D227D9F07009B8E31 /* gameover.wav */; };
 		F43E5052227DA709009B8E31 /* SKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E5051227DA709009B8E31 /* SKSpriteNode.swift */; };
 		F43E5054227DB2A8009B8E31 /* ActionShit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E5053227DB2A8009B8E31 /* ActionShit.swift */; };
+		F43E5056227DDABA009B8E31 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E5055227DDABA009B8E31 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F43E504D227D9F07009B8E31 /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
 		F43E5051227DA709009B8E31 /* SKSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSpriteNode.swift; sourceTree = "<group>"; };
 		F43E5053227DB2A8009B8E31 /* ActionShit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionShit.swift; sourceTree = "<group>"; };
+		F43E5055227DDABA009B8E31 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				F43E5050227DA6F1009B8E31 /* Extension */,
 				F43E5053227DB2A8009B8E31 /* ActionShit.swift */,
+				F43E5055227DDABA009B8E31 /* Strings.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				F43E5032227D59F5009B8E31 /* GameScene.swift in Sources */,
 				F43E5054227DB2A8009B8E31 /* ActionShit.swift in Sources */,
+				F43E5056227DDABA009B8E31 /* Strings.swift in Sources */,
 				F43E5034227D59F5009B8E31 /* GameViewController.swift in Sources */,
 				F43E5052227DA709009B8E31 /* SKSpriteNode.swift in Sources */,
 				F43E504A227D8464009B8E31 /* MenuScene.swift in Sources */,

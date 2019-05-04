@@ -13,13 +13,8 @@ final class GameScene: SKScene {
     private var colorSwitch: SKSpriteNode!
     private var switchState = SwitchState.red
     private var currentColorIndex:Int?
-    private let scoreLabel = SKLabelNode(text: "0")
+    private let scoreLabel = SKLabelNode(text: Strings.zero.rawValue)
     private var score = 0
-    
-    override func didMove(to view: SKView) {
-        layoutScene()
-        setupPhysics()
-    }
     
     private func setupPhysics() {
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -5.8)
@@ -31,12 +26,12 @@ final class GameScene: SKScene {
         let backgroundImage = SKSpriteNode()
         backgroundImage.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         backgroundImage.zPosition = 0
-        backgroundImage.texture = SKTexture(imageNamed: "bg7")
+        backgroundImage.texture = SKTexture(imageNamed: SKShits.bg7.rawValue)
         backgroundImage.alpha = 0.9
         backgroundImage.aspectFillToSize(fillSize: view!.frame.size)
         
         addChild(backgroundImage)
-        colorSwitch = SKSpriteNode(imageNamed: "ColorCircle")
+        colorSwitch = SKSpriteNode(imageNamed: SKShits.colorCircle.rawValue)
         colorSwitch.size = CGSize(width: frame.size.width/3, height: frame.size.width/3)
         colorSwitch.position = CGPoint(x: frame.midX, y: frame.minY + colorSwitch.size.height)
         colorSwitch.zPosition = ZPositions.colorSwitch
@@ -45,7 +40,7 @@ final class GameScene: SKScene {
         colorSwitch.physicsBody?.isDynamic = false
         addChild(colorSwitch)
         
-        scoreLabel.fontName = "Copperplate"
+        scoreLabel.fontName = FontName.copperplate.rawValue
         scoreLabel.fontSize = 60.0
         scoreLabel.fontColor = .white
         scoreLabel.position = CGPoint(x: frame.midX, y: frame.midY)
@@ -61,11 +56,11 @@ final class GameScene: SKScene {
     private func spawnBall() {
         currentColorIndex = Int(arc4random_uniform(UInt32(4)))
         
-        let ball = SKSpriteNode(texture: SKTexture(imageNamed: "ball"),
+        let ball = SKSpriteNode(texture: SKTexture(imageNamed: SKShits.ball.rawValue),
                                 color: PlayColors.colors[currentColorIndex!],
                                 size: CGSize(width: 50, height: 50))
         ball.colorBlendFactor = 1.0
-        ball.name = "Ball"
+        ball.name = Strings.ball.rawValue
         ball.position = CGPoint(x: frame.midX, y: frame.maxY)
         ball.zPosition = ZPositions.ball
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width/2)
@@ -86,7 +81,7 @@ final class GameScene: SKScene {
     
     private func gameOver() {
         
-        run(SKAction.playSoundFileNamed("gameover", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed(Sounds.gameover.rawValue, waitForCompletion: false))
         
         UserDefaultsManager.shared.value.set(score, forKey: UserDefaultsKeys.recentScroe.rawValue)
         if score > UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue) {
@@ -107,6 +102,16 @@ final class GameScene: SKScene {
         
         self.view?.window?.rootViewController?.present(actionSheet, animated: true, completion: nil)
     }
+}
+
+// MARK: - Overrides
+
+extension GameScene {
+    
+    override func didMove(to view: SKView) {
+        layoutScene()
+        setupPhysics()
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         turnWheel()
@@ -122,9 +127,9 @@ extension GameScene: SKPhysicsContactDelegate {
         
         if contactMask == PhysicsCategories.ballCategory | PhysicsCategories.switchCategory {
             
-            if let ball = contact.bodyA.node?.name == "Ball" ? contact.bodyA.node as? SKSpriteNode : contact.bodyB.node as? SKSpriteNode {
+            if let ball = contact.bodyA.node?.name == Strings.ball.rawValue ? contact.bodyA.node as? SKSpriteNode : contact.bodyB.node as? SKSpriteNode {
                 if currentColorIndex == switchState.rawValue {
-                    run(SKAction.playSoundFileNamed("ding", waitForCompletion: false))
+                    run(SKAction.playSoundFileNamed(Sounds.ding.rawValue, waitForCompletion: false))
                     score += 1
                     updateScoreLabel()
                     ball.run(SKAction.fadeOut(withDuration: 0.25)) {

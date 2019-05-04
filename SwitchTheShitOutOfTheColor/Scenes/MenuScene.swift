@@ -21,7 +21,7 @@ final class MenuScene: SKScene {
         let backgroundImage = SKSpriteNode()
         backgroundImage.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         backgroundImage.zPosition = 0
-        backgroundImage.texture = SKTexture(imageNamed: "bg4")
+        backgroundImage.texture = SKTexture(imageNamed: SKShits.bg4.rawValue)
         backgroundImage.aspectFillToSize(fillSize: view!.frame.size)
         
         addChild(backgroundImage)
@@ -29,23 +29,23 @@ final class MenuScene: SKScene {
     
     private func addLabels() {
         
-        let playLabel = SKLabelNode(text: "Tap To Play Pal!")
-        playLabel.fontName = "Copperplate"
+        let playLabel = SKLabelNode(text: SKShits.tapToPlay.rawValue)
+        playLabel.fontName = FontName.copperplate.rawValue
         playLabel.fontSize = 40.0
         playLabel.fontColor = .white
         playLabel.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(playLabel)
         animate(label: playLabel)
         
-        let highscoreLabel = SKLabelNode(text: "Highscore: " + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue))")
-        highscoreLabel.fontName = "Copperplate"
+        let highscoreLabel = SKLabelNode(text: SKShits.highscore.rawValue + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue))")
+        highscoreLabel.fontName = FontName.copperplate.rawValue
         highscoreLabel.fontSize = 30.0
         highscoreLabel.fontColor = .white
         highscoreLabel.position = CGPoint(x: frame.midX, y: frame.midY - highscoreLabel.frame.size.height*4)
         addChild(highscoreLabel)
         
-        let recentScoreLabel = SKLabelNode(text: "Recent Score: " + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.recentScroe.rawValue))" )
-        recentScoreLabel.fontName = "Copperplate"
+        let recentScoreLabel = SKLabelNode(text: SKShits.recentScore.rawValue + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.recentScroe.rawValue))" )
+        recentScoreLabel.fontName = FontName.copperplate.rawValue
         recentScoreLabel.fontSize = 20.0
         recentScoreLabel.fontColor = .white
         recentScoreLabel.position = CGPoint(x: frame.midX,
