@@ -26,21 +26,21 @@ class MenuScene: SKScene {
     private func addLabels() {
         
         let playLabel = SKLabelNode(text: "Tap To Play Pal!")
-        playLabel.fontName = "Papyrus"
+        playLabel.fontName = "Copperplate"
         playLabel.fontSize = 40.0
         playLabel.fontColor = .white
         playLabel.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(playLabel)
         
-        let highscoreLabel = SKLabelNode(text: "Highscore:")
-        highscoreLabel.fontName = "Papyrus"
+        let highscoreLabel = SKLabelNode(text: "Highscore: " + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue))")
+        highscoreLabel.fontName = "Copperplate"
         highscoreLabel.fontSize = 25.0
         highscoreLabel.fontColor = .white
         highscoreLabel.position = CGPoint(x: frame.midX, y: frame.midY - highscoreLabel.frame.size.height*4)
         addChild(highscoreLabel)
         
-        let recentScoreLabel = SKLabelNode(text: "Recent Score:")
-        recentScoreLabel.fontName = "Papyrus"
+        let recentScoreLabel = SKLabelNode(text: "Recent Score: " + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.recentScroe.rawValue))" )
+        recentScoreLabel.fontName = "Copperplate"
         recentScoreLabel.fontSize = 30.0
         recentScoreLabel.fontColor = .white
         recentScoreLabel.position = CGPoint(x: frame.midX,

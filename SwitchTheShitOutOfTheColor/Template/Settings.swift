@@ -20,3 +20,18 @@ enum ZPositions {
     static let ball: CGFloat = 1
     static let colorSwitch: CGFloat = 2 
 }
+
+public struct UserDefaultsManager {
+    
+    public static let shared = UserDefaultsManager()
+    
+    public let value = UserDefaults.standard
+    
+    private init() {}
+}
+
+public enum UserDefaultsKeys:String {
+    case highscore
+    case recentScroe
+}
+

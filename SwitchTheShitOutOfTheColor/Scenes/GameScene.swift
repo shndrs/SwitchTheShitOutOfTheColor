@@ -50,7 +50,7 @@ class GameScene: SKScene {
         colorSwitch.physicsBody?.isDynamic = false
         addChild(colorSwitch)
         
-        scoreLabel.fontName = "Papyrus"
+        scoreLabel.fontName = "Copperplate"
         scoreLabel.fontSize = 60.0
         scoreLabel.fontColor = .white
         scoreLabel.position = CGPoint(x: frame.midX, y: frame.midY)
@@ -91,7 +91,16 @@ class GameScene: SKScene {
     }
     
     private func gameOver() {
-        print("Game Fuckin' Over Asshole")
+        // TODO: Popout gameover and ask for play again or go to the menu
+        
+        UserDefaultsManager.shared.value.set(score, forKey: UserDefaultsKeys.recentScroe.rawValue)
+        
+        if score > UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue) {
+            UserDefaultsManager.shared.value.set(score,forKey: UserDefaultsKeys.highscore.rawValue)
+        }
+        
+        let menuScene = MenuScene(size:view!.bounds.size)
+        view?.presentScene(menuScene, transition: .reveal(with: .down, duration: 0.6))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
