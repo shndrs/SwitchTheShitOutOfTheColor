@@ -8,19 +8,23 @@
 
 import SpriteKit
 
-class MenuScene: SKScene {
+final class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
-        backgroundColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
-        addLogo()
+        addLogoAndBackground()
         addLabels()
     }
     
-    private func addLogo() {
-        let logo = SKSpriteNode(imageNamed: "logo")
-        logo.size = CGSize(width: frame.size.width/4, height: frame.size.width/4)
-        logo.position = CGPoint(x: frame.midX, y: frame.midY + frame.size.height/4)
-        addChild(logo)
+    private func addLogoAndBackground() {
+        
+        backgroundColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
+        let backgroundImage = SKSpriteNode()
+        backgroundImage.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        backgroundImage.zPosition = 0
+        backgroundImage.texture = SKTexture(imageNamed: "bg4")
+        backgroundImage.aspectFillToSize(fillSize: view!.frame.size)
+        
+        addChild(backgroundImage)
     }
     
     private func addLabels() {
@@ -35,14 +39,14 @@ class MenuScene: SKScene {
         
         let highscoreLabel = SKLabelNode(text: "Highscore: " + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue))")
         highscoreLabel.fontName = "Copperplate"
-        highscoreLabel.fontSize = 25.0
+        highscoreLabel.fontSize = 30.0
         highscoreLabel.fontColor = .white
         highscoreLabel.position = CGPoint(x: frame.midX, y: frame.midY - highscoreLabel.frame.size.height*4)
         addChild(highscoreLabel)
         
         let recentScoreLabel = SKLabelNode(text: "Recent Score: " + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.recentScroe.rawValue))" )
         recentScoreLabel.fontName = "Copperplate"
-        recentScoreLabel.fontSize = 30.0
+        recentScoreLabel.fontSize = 20.0
         recentScoreLabel.fontColor = .white
         recentScoreLabel.position = CGPoint(x: frame.midX,
                                             y: highscoreLabel.position.y - recentScoreLabel.frame.size.height*2)

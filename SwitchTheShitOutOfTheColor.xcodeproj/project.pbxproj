@@ -17,6 +17,8 @@
 		F43E504A227D8464009B8E31 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E5049227D8464009B8E31 /* MenuScene.swift */; };
 		F43E504C227D9E0B009B8E31 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = F43E504B227D9E0B009B8E31 /* ding.wav */; };
 		F43E504E227D9F07009B8E31 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = F43E504D227D9F07009B8E31 /* gameover.wav */; };
+		F43E5052227DA709009B8E31 /* SKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E5051227DA709009B8E31 /* SKSpriteNode.swift */; };
+		F43E5054227DB2A8009B8E31 /* ActionShit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E5053227DB2A8009B8E31 /* ActionShit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		F43E5049227D8464009B8E31 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		F43E504B227D9E0B009B8E31 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		F43E504D227D9F07009B8E31 /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
+		F43E5051227DA709009B8E31 /* SKSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSpriteNode.swift; sourceTree = "<group>"; };
+		F43E5053227DB2A8009B8E31 /* ActionShit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionShit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		F43E502A227D59F5009B8E31 /* SwitchTheShitOutOfTheColor */ = {
 			isa = PBXGroup;
 			children = (
+				F43E504F227DA6E4009B8E31 /* Other */,
 				F43E5046227D62AF009B8E31 /* Assets */,
 				F43E5045227D6299009B8E31 /* Template */,
 				F43E5044227D627F009B8E31 /* Scenes */,
@@ -109,6 +114,23 @@
 				F43E503A227D59F6009B8E31 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		F43E504F227DA6E4009B8E31 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F43E5050227DA6F1009B8E31 /* Extension */,
+				F43E5053227DB2A8009B8E31 /* ActionShit.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F43E5050227DA6F1009B8E31 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F43E5051227DA709009B8E31 /* SKSpriteNode.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43E5032227D59F5009B8E31 /* GameScene.swift in Sources */,
+				F43E5054227DB2A8009B8E31 /* ActionShit.swift in Sources */,
 				F43E5034227D59F5009B8E31 /* GameViewController.swift in Sources */,
+				F43E5052227DA709009B8E31 /* SKSpriteNode.swift in Sources */,
 				F43E504A227D8464009B8E31 /* MenuScene.swift in Sources */,
 				F43E5048227D6A8C009B8E31 /* Settings.swift in Sources */,
 				F43E502C227D59F5009B8E31 /* AppDelegate.swift in Sources */,

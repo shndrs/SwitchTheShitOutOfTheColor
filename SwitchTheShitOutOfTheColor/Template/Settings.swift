@@ -16,9 +16,9 @@ enum PhysicsCategories {
 }
 
 enum ZPositions {
-    static let label: CGFloat = 0
-    static let ball: CGFloat = 1
-    static let colorSwitch: CGFloat = 2 
+    static let label: CGFloat = 1
+    static let ball: CGFloat = 2
+    static let colorSwitch: CGFloat = 3
 }
 
 public struct UserDefaultsManager {

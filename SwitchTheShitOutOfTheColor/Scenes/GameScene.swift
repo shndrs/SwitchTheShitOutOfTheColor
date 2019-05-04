@@ -21,7 +21,7 @@ enum SwitchState: Int {
     case red, yellow, green, blue
 }
 
-class GameScene: SKScene {
+final class GameScene: SKScene {
     
     private var colorSwitch: SKSpriteNode!
     private var switchState = SwitchState.red
@@ -35,12 +35,20 @@ class GameScene: SKScene {
     }
     
     private func setupPhysics() {
-        physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.0)
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: -5.8)
         physicsWorld.contactDelegate = self
     }
     
     private func layoutScene() {
         backgroundColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
+        let backgroundImage = SKSpriteNode()
+        backgroundImage.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        backgroundImage.zPosition = 0
+        backgroundImage.texture = SKTexture(imageNamed: "bg7")
+        backgroundImage.alpha = 0.9
+        backgroundImage.aspectFillToSize(fillSize: view!.frame.size)
+        
+        addChild(backgroundImage)
         colorSwitch = SKSpriteNode(imageNamed: "ColorCircle")
         colorSwitch.size = CGSize(width: frame.size.width/3, height: frame.size.width/3)
         colorSwitch.position = CGPoint(x: frame.midX, y: frame.minY + colorSwitch.size.height)
@@ -68,7 +76,7 @@ class GameScene: SKScene {
         
         let ball = SKSpriteNode(texture: SKTexture(imageNamed: "ball"),
                                 color: PlayColors.colors[currentColorIndex!],
-                                size: CGSize(width: 40, height: 40))
+                                size: CGSize(width: 50, height: 50))
         ball.colorBlendFactor = 1.0
         ball.name = "Ball"
         ball.position = CGPoint(x: frame.midX, y: frame.maxY)
@@ -86,27 +94,36 @@ class GameScene: SKScene {
         } else {
             switchState = .red
         }
-        
         colorSwitch.run(SKAction.rotate(byAngle: .pi/2 , duration: 0.25))
     }
     
     private func gameOver() {
-        // TODO: Popout gameover and ask for play again or go to the menu
-        run(SKAction.playSoundFileNamed("gameover", waitForCompletion: false))
-        UserDefaultsManager.shared.value.set(score, forKey: UserDefaultsKeys.recentScroe.rawValue)
         
+        run(SKAction.playSoundFileNamed("gameover", waitForCompletion: false))
+        
+        UserDefaultsManager.shared.value.set(score, forKey: UserDefaultsKeys.recentScroe.rawValue)
         if score > UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue) {
             UserDefaultsManager.shared.value.set(score,forKey: UserDefaultsKeys.highscore.rawValue)
         }
         
-        let menuScene = MenuScene(size:view!.bounds.size)
-        view?.presentScene(menuScene, transition: .reveal(with: .down, duration: 0.6))
+        let actionSheet = GameoverActionSheet.show(restart: {
+            
+            self.turnWheel()
+            self.score = 0
+            self.updateScoreLabel()
+            self.currentColorIndex = nil
+            self.spawnBall()
+        }) {
+            let menuScene = MenuScene(size:self.view!.bounds.size)
+            self.view?.presentScene(menuScene, transition: .reveal(with: .down, duration: 0.6))
+        }
+        
+        self.view?.window?.rootViewController?.present(actionSheet, animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         turnWheel()
     }
-    
 }
 
 // MARK: - SKPhysicsContactDelegate
