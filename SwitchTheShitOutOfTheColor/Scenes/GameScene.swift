@@ -50,7 +50,7 @@ class GameScene: SKScene {
         colorSwitch.physicsBody?.isDynamic = false
         addChild(colorSwitch)
         
-        scoreLabel.fontName = "AvenirNext-Bold"
+        scoreLabel.fontName = "Papyrus"
         scoreLabel.fontSize = 60.0
         scoreLabel.fontColor = .white
         scoreLabel.position = CGPoint(x: frame.midX, y: frame.midY)
