@@ -14,10 +14,12 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         layoutScene()
+        setupPhysics()
     }
     
     private func setupPhysics() {
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -2.0)
+        physicsWorld.contactDelegate = self
     }
     
     private func layoutScene() {
@@ -34,7 +36,7 @@ class GameScene: SKScene {
     
     private func spawnBall() {
         let ball = SKSpriteNode(imageNamed: "ball")
-        ball.size = CGSize(width: 30, height: 30)
+        ball.size = CGSize(width: 40, height: 40)
         ball.position = CGPoint(x: frame.midX, y: frame.maxY)
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width/2)
         ball.physicsBody?.categoryBitMask = PhysicsCategories.ballCategory
@@ -45,4 +47,14 @@ class GameScene: SKScene {
     
 }
 
-
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if contactMask == PhysicsCategories.ballCategory | PhysicsCategories.switchCategory {
+            print("Hit The Shit")
+        }
+        
+    }
+}
