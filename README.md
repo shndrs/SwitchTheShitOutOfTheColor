@@ -1,6 +1,6 @@
 # Switch the Shit Out of the Color
 
-<p>My new game i see this game in a video, and i told myself that gave it a shot.</p>
+<p>I saw this game in a video, and i told myself that i should gave it a shot.</p>
 <p>And here we are now, hope you fellas enjoy it ❤</p>  
 
 ## User Interface and User Experience
