@@ -14,7 +14,6 @@ public struct GameoverActionSheet {
         let actionSheet = UIAlertController(title: "Gameover", message: "Which one do you prefer?", preferredStyle: .actionSheet)
         
         let menu = UIAlertAction(title: "Go To The Menu", style: .destructive) { (action) in
-//            actionSheet.dismiss(animated: true)
             menuCB()
         }
         
