@@ -13,6 +13,7 @@
 		F43E5037227D59F5009B8E31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43E5035227D59F5009B8E31 /* Main.storyboard */; };
 		F43E5039227D59F6009B8E31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43E5038227D59F6009B8E31 /* Assets.xcassets */; };
 		F43E503C227D59F6009B8E31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43E503A227D59F6009B8E31 /* LaunchScreen.storyboard */; };
+		F43E5048227D6A8C009B8E31 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E5047227D6A8C009B8E31 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F43E5038227D59F6009B8E31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F43E503B227D59F6009B8E31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F43E503D227D59F6009B8E31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43E5047227D6A8C009B8E31 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		F43E502A227D59F5009B8E31 /* SwitchTheShitOutOfTheColor */ = {
 			isa = PBXGroup;
 			children = (
-				F43E502B227D59F5009B8E31 /* AppDelegate.swift */,
-				F43E5031227D59F5009B8E31 /* GameScene.swift */,
-				F43E5033227D59F5009B8E31 /* GameViewController.swift */,
-				F43E5035227D59F5009B8E31 /* Main.storyboard */,
-				F43E5038227D59F6009B8E31 /* Assets.xcassets */,
-				F43E503A227D59F6009B8E31 /* LaunchScreen.storyboard */,
+				F43E5046227D62AF009B8E31 /* Assets */,
+				F43E5045227D6299009B8E31 /* Template */,
+				F43E5044227D627F009B8E31 /* Scenes */,
+				F43E5043227D625E009B8E31 /* ViewControllers */,
 				F43E503D227D59F6009B8E31 /* Info.plist */,
 			);
 			path = SwitchTheShitOutOfTheColor;
+			sourceTree = "<group>";
+		};
+		F43E5043227D625E009B8E31 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F43E5033227D59F5009B8E31 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F43E5044227D627F009B8E31 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F43E5031227D59F5009B8E31 /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F43E5045227D6299009B8E31 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				F43E502B227D59F5009B8E31 /* AppDelegate.swift */,
+				F43E5047227D6A8C009B8E31 /* Settings.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		F43E5046227D62AF009B8E31 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F43E5035227D59F5009B8E31 /* Main.storyboard */,
+				F43E5038227D59F6009B8E31 /* Assets.xcassets */,
+				F43E503A227D59F6009B8E31 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +175,7 @@
 			files = (
 				F43E5032227D59F5009B8E31 /* GameScene.swift in Sources */,
 				F43E5034227D59F5009B8E31 /* GameViewController.swift in Sources */,
+				F43E5048227D6A8C009B8E31 /* Settings.swift in Sources */,
 				F43E502C227D59F5009B8E31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
