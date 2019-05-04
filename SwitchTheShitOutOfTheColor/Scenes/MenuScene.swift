@@ -31,6 +31,7 @@ class MenuScene: SKScene {
         playLabel.fontColor = .white
         playLabel.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(playLabel)
+        animate(label: playLabel)
         
         let highscoreLabel = SKLabelNode(text: "Highscore: " + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue))")
         highscoreLabel.fontName = "Copperplate"
@@ -46,6 +47,16 @@ class MenuScene: SKScene {
         recentScoreLabel.position = CGPoint(x: frame.midX,
                                             y: highscoreLabel.position.y - recentScoreLabel.frame.size.height*2)
         addChild(recentScoreLabel)
+    }
+    
+    func animate(label:SKLabelNode) {
+        
+        let scaleUp = SKAction.scale(to: 1.02, duration: 0.5)
+        let scaleDown = SKAction.scale(to: 1.0, duration: 0.5)
+        
+        let sequence = SKAction.sequence([scaleDown, scaleUp])
+        label.run(SKAction.repeatForever(sequence))
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
