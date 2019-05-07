@@ -15,6 +15,10 @@
 <p>Xcode 10.1</p>  
 <p>Swift 4.2</p>
 
+## Dependencies
+
+<p>SpriteKit</p>
+
 ## Author
 
 sahandraeisi1994@gmail.com, sahandraeisi@yahoo.com
