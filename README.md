@@ -10,8 +10,6 @@
 ![3](https://user-images.githubusercontent.com/34839080/57179609-cb81b000-6e94-11e9-830a-a26ae7e3cd08.png)
 
 ## Requirements
-
-<p>iOS 9.0+</p>
 <p>Xcode 10.1</p>  
 <p>Swift 4.2</p>
 
