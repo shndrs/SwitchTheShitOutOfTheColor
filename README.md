@@ -1,6 +1,7 @@
 # Switch the Shit Out of the Color
 
 ![swift-version](https://img.shields.io/badge/Swift-4.2-blueviolet.svg)
+![xcode-version](https://img.shields.io/badge/Xcode-10.1-green.svg)
 <p>I saw this game in a video, and i told myself that i should gave it a shot.</p>
 <p>And here we are now, hope you fellas enjoy it ❤</p>  
 
