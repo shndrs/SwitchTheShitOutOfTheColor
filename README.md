@@ -1,5 +1,7 @@
 # Switch the Shit Out of the Color
 
+![swift-version](https://img.shields.io/badge/Swift-4.2-blueviolet.svg)
+![xcode-version](https://img.shields.io/badge/Xcode-10.1-green.svg)
 <p>I saw this game in a video, and i told myself that i should gave it a shot.</p>
 <p>And here we are now, hope you fellas enjoy it ❤</p>  
 
@@ -10,10 +12,12 @@
 ![3](https://user-images.githubusercontent.com/34839080/57179609-cb81b000-6e94-11e9-830a-a26ae7e3cd08.png)
 
 ## Requirements
-
-<p>iOS 9.0+</p>
 <p>Xcode 10.1</p>  
 <p>Swift 4.2</p>
+
+## Dependencies
+
+<p>SpriteKit</p>
 
 ## Author
 
