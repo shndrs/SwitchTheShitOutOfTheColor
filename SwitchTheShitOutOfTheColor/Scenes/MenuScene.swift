@@ -31,7 +31,7 @@ final class MenuScene: SKScene {
         
         let playLabel = SKLabelNode(text: SKShits.tapToPlay.rawValue)
         playLabel.fontName = FontName.copperplate.rawValue
-        playLabel.fontSize = 40.0
+        playLabel.fontSize = 34.0
         playLabel.fontColor = .white
         playLabel.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(playLabel)
@@ -39,12 +39,12 @@ final class MenuScene: SKScene {
         
         let highscoreLabel = SKLabelNode(text: SKShits.highscore.rawValue + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.highscore.rawValue))")
         highscoreLabel.fontName = FontName.copperplate.rawValue
-        highscoreLabel.fontSize = 30.0
+        highscoreLabel.fontSize = 27.0
         highscoreLabel.fontColor = .white
         highscoreLabel.position = CGPoint(x: frame.midX, y: frame.midY - highscoreLabel.frame.size.height*4)
         addChild(highscoreLabel)
         
-        let recentScoreLabel = SKLabelNode(text: SKShits.recentScore.rawValue + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.recentScroe.rawValue))" )
+        let recentScoreLabel = SKLabelNode(text: SKShits.recentScore.rawValue + "\(UserDefaultsManager.shared.value.integer(forKey: UserDefaultsKeys.recentScroe.rawValue))")
         recentScoreLabel.fontName = FontName.copperplate.rawValue
         recentScoreLabel.fontSize = 20.0
         recentScoreLabel.fontColor = .white

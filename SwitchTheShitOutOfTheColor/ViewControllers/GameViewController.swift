@@ -17,17 +17,12 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             
             let scene = MenuScene(size: view.bounds.size)
-                
-            
             scene.scaleMode = .aspectFill
-            
             view.presentScene(scene)
             
             view.ignoresSiblingOrder = true
-            
             view.showsFPS = true
             view.showsNodeCount = true
         }
     }
-
 }
